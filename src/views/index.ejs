@@ -1,20 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>SSR | <%= title %></title>
-  </head>
+<%- include('partials/head') %> 
+<%- include('partials/nav') %> 
+   
 
-  <body>
-    <header>
-      <nav>
-        <a href="/" class="navLink">Home</a>
-        <a href="/about" class="navLink">About</a>
-      </nav>
-    </header>
     <!-- this is normas html comment -->
     <%# This is comment and it is safely hidden in back end %> 
     <% const username="James Bond" %>
@@ -28,6 +15,4 @@
       <% }) %>
     </ul>
 
-    <footer>Copyright &copy; <%= new Date().getFullYear() %> </footer>
-  </body>
-</html>
+<%- include('partials/footer') %> 

@@ -35,4 +35,18 @@ app.get('/about', (req, res) => {
   res.render('about', data);
 });
 
+app.get('/contact', (req, res) => {
+  const locals = {
+    title: 'Contact Us'
+  }
+  res.render('contact', locals)
+})
+
+// GET /users - grazins users.ejs psl kuris atvaizduos useriu korteliu pavidalus
+// sukuri user.ejs
+// exportuoti importuoti users masyva
+// paduoti users masyva i user.ejs psl
+// user.ejs psl generuoti korteles is masyvo duomenu 
+
+
 app.listen(PORT, () => console.log('listening on port', PORT));
