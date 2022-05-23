@@ -1,9 +1,10 @@
 h1 {
   font-size: 3rem;
+  font-weight: normal;
 }
 
 body {
-  background-color: tomato;
+  /* background-color: tomato; */
 }
 
 img {

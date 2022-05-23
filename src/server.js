@@ -4,19 +4,21 @@ const path = require('path');
 
 const PORT = 3000;
 
+// Set default view engine default view directory /views
+app.set('view engine', 'ejs');
+// kelias iki views direktorijos nuo root
+app.set('views', 'src/views');
+
 // static directory
 const staticDir = path.join(__dirname, 'assets');
 app.use(express.static(staticDir));
 
 app.get('/', function (req, res) {
-  const pathToIndex = path.join(__dirname, 'views', 'index.html');
-  console.log(__dirname);
-  res.sendFile(pathToIndex);
+  res.render('index');
 });
 
 app.get('/about', (req, res) => {
-  const pathToAbout = path.join(__dirname, 'views', 'about.html');
-  res.sendFile(pathToAbout);
+  res.render('about');
 });
 
 app.listen(PORT, () => console.log('listening on port', PORT));
