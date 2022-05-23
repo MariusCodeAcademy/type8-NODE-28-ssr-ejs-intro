@@ -13,12 +13,26 @@ app.set('views', 'src/views');
 const staticDir = path.join(__dirname, 'assets');
 app.use(express.static(staticDir));
 
+const mainInfo = {
+  title: 'SSR',
+  date: '2022'
+}
+
 app.get('/', function (req, res) {
-  res.render('index');
+  // get info from db
+  const tech = ['Html', 'Css', 'Js']
+  const data = {
+    tech,
+    title: 'Home page'
+  }
+  res.render('index', data);
 });
 
 app.get('/about', (req, res) => {
-  res.render('about');
+  const data = {
+    title: 'About Us'
+  }
+  res.render('about', data);
 });
 
 app.listen(PORT, () => console.log('listening on port', PORT));
