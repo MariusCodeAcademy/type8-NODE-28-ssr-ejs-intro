@@ -23,21 +23,24 @@ app.get('/', function (req, res) {
   const tech = ['Html', 'Css', 'Js']
   const data = {
     tech,
-    title: 'Home page'
+    title: 'Welcome',
+    currentPage: 'home'
   }
   res.render('index', data);
 });
 
 app.get('/about', (req, res) => {
   const data = {
-    title: 'About Us'
+    title: 'About Us',
+    currentPage: 'about'
   }
   res.render('about', data);
 });
 
 app.get('/contact', (req, res) => {
   const locals = {
-    title: 'Contact Us'
+    title: 'Contact Us',
+    currentPage: 'contact'
   }
   // res.render('failo pavadinimas views directory be ejs', kintamuju objektas)
   res.render('contact', locals)

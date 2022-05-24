@@ -11,6 +11,27 @@ img {
   max-width: 100%;
 }
 
+
+nav {
+  background-color: #333;
+  color: snow;
+}
+.navLink {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  color: white;
+  display: inline-block;
+}
+
 .navLink.active {
-  background-color: rgb(202, 202, 202);
+  /* font-weight: bold; */
+  text-decoration: underline;
+  color: rgb(198, 198, 198);
+  background-color: rgb(103, 103, 103);
+}
+
+
+footer {
+  text-align: center;
 }
