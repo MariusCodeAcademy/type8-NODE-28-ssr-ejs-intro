@@ -3,7 +3,30 @@
   
     <h1><%= locals.title && title %> </h1>
     <hr>
+    <% if (feedback) { %>
+        <div class="feedback error">
+            <%= feedback %> 
+        </div>
+    <% } %>
+    
+    
     <h2>Our books</h2>
+    <div class="grid">
+        <% if (allBooksArr && allBooksArr.length) { %>
+            <% allBooksArr.forEach(el => { %>
+            <div class="card">
+                <h4><%= el.title %> </h4>
+                <p><%= el.author %></p>
+                <p><i><%= el.year %></i></p>
+            </div>
+            <% }) %>
+        <% } else { %>
+        <p>There are no books</p>
+        <% } %> 
+        
+        
+        
+    </div>
     
 
 <%- include('partials/footer') %> 
