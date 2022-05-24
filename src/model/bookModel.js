@@ -25,7 +25,7 @@ function addBook(title, author, year, category) {
   INSERT INTO books (title, author, year, category) 
   VALUES (?, ?, ?, ?)
   `;
-  return executeDb(sql, [title, author, year, category])
+  return executeDb(sql, [title, author, year, category]);
 }
 
 module.exports = {

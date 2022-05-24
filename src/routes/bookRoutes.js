@@ -28,9 +28,9 @@ bookRoutes.get('/books/new', async (req, res) => {
   const locals = {
     currentPage: 'new-form',
     title: 'Lets create a new book',
-  }
+  };
   res.render('new-book', locals);
-})
+});
 
 // GET /books/new - creates new book from given data
 
@@ -38,20 +38,21 @@ bookRoutes.get('/books/new', async (req, res) => {
 
 // POST /books/new - res.json('trying to create a new book')
 bookRoutes.post('/books/new', async (req, res) => {
-  
   console.log('req.body ===', req.body);
-  const {title, author, year, category} = req.body;
-  const result = await addBook(title, author, year, category)
+  const {
+    title, author, year, category,
+  } = req.body;
+  const result = await addBook(title, author, year, category);
   console.log('result ===', result);
-  const feedback = result.affectedRows === 1 ? 'Success' : 'Error'
+  const feedback = result.affectedRows === 1 ? 'Success' : 'Error';
 
   const locals = {
     currentPage: 'new-form',
     title: 'Lets create a new book',
     feedback,
-  }
+  };
   res.render('new-book', locals);
   // res.redirect('/books')
-})
+});
 
 module.exports = bookRoutes;

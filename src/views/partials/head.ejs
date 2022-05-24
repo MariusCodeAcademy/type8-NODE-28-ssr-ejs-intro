@@ -15,7 +15,11 @@
       <%# } %>
     <%= locals.title && title  %> 
     </title>
-        
+    <% if (currentPage === 'new-form') { %>
+     <script src="/js/front.js" defer></script>
+     <% } %>
+     
+     <!-- <script src="/js/<%= currentPage %>.js" defer></script> -->
   </head>
 
   <body>
