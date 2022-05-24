@@ -5,7 +5,7 @@ const bookRoutes = express.Router();
 
 // GET /books - render books page - sukurti ir atvaizduoti books.ejs
 bookRoutes.get('/books', async (req, res) => {
-  let allBooksArr; 
+  let allBooksArr;
   let feedback;
   try {
     allBooksArr = await getAllBooks();
@@ -22,5 +22,16 @@ bookRoutes.get('/books', async (req, res) => {
   };
   res.render('books', locals);
 });
+
+// GET /books/new - render new-book.ejs kuriame yra forma sukurti naujai knygai
+bookRoutes.get('/books/new', async (req, res) => {
+  const locals = {
+    currentPage: 'new-form',
+    title: 'Lets create a new book',
+  }
+  res.render('new-book', locals);
+})
+
+// POST /books/new - creates new book from given data
 
 module.exports = bookRoutes;
