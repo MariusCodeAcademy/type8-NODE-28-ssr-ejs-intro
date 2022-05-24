@@ -28,3 +28,10 @@ INSERT INTO `books` (`id`, `title`, `author`, `timeStamp`, `year`, `image`, `cat
 (5, 'Star wars', 'Jedi', '2021-10-04 05:51:11', 2015, 'wars.jpg', NULL),
 (6, '1984', 'George Orvel', '2021-10-01 09:05:18', 1970, '1984.jpg', 1),
 (7, '20000 Thousand miles under sea', 'Jules Vern', '2021-10-04 07:02:05', 1960, 'sea.jpg', 1);
+
+--  categories 
+INSERT INTO `book_categories` (`id`, `cat_name`) VALUES
+(1, 'History'),
+(2, 'Chidren'),
+(3, 'Fantasy'),
+(4, 'Poetry');
