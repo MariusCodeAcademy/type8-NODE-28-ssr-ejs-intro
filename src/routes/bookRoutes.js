@@ -1,5 +1,5 @@
 const express = require('express');
-const { getAllBooks } = require('../model/bookModel');
+const { getAllBooks, addBook } = require('../model/bookModel');
 
 const bookRoutes = express.Router();
 
@@ -32,7 +32,26 @@ bookRoutes.get('/books/new', async (req, res) => {
   res.render('new-book', locals);
 })
 
-// POST /books/new - creates new book from given data
+// GET /books/new - creates new book from given data
+
 // POST /books/new - render new-book.ejs pass feedback and display feedback
+
+// POST /books/new - res.json('trying to create a new book')
+bookRoutes.post('/books/new', async (req, res) => {
+  
+  console.log('req.body ===', req.body);
+  const {title, author, year, category} = req.body;
+  const result = await addBook(title, author, year, category)
+  console.log('result ===', result);
+  const feedback = result.affectedRows === 1 ? 'Success' : 'Error'
+
+  const locals = {
+    currentPage: 'new-form',
+    title: 'Lets create a new book',
+    feedback,
+  }
+  res.render('new-book', locals);
+  // res.redirect('/books')
+})
 
 module.exports = bookRoutes;
