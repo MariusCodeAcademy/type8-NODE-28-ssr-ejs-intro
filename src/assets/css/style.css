@@ -10,3 +10,7 @@ body {
 img {
   max-width: 100%;
 }
+
+.navLink.active {
+  background-color: rgb(202, 202, 202);
+}

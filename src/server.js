@@ -39,6 +39,7 @@ app.get('/contact', (req, res) => {
   const locals = {
     title: 'Contact Us'
   }
+  // res.render('failo pavadinimas views directory be ejs', kintamuju objektas)
   res.render('contact', locals)
 })
 
