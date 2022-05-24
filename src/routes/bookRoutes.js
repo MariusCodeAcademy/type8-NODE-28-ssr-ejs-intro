@@ -33,5 +33,6 @@ bookRoutes.get('/books/new', async (req, res) => {
 })
 
 // POST /books/new - creates new book from given data
+// POST /books/new - render new-book.ejs pass feedback and display feedback
 
 module.exports = bookRoutes;
