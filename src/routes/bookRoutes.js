@@ -1,14 +1,26 @@
-const express = require('express')
+const express = require('express');
+const { getAllBooks } = require('../model/bookModel');
 
-const bookRoutes = express.Router()
+const bookRoutes = express.Router();
 
 // GET /books - render books page - sukurti ir atvaizduoti books.ejs
 bookRoutes.get('/books', async (req, res) => {
+  let allBooksArr; 
+  let feedback;
+  try {
+    allBooksArr = await getAllBooks();
+  } catch (error) {
+    console.log(error);
+    feedback = 'Something went wrong';
+  }
+
   const locals = {
     currentPage: 'books',
-    title: 'Books'
-  }
-  res.render('books', locals)
-})
+    title: 'Books',
+    allBooksArr,
+    feedback,
+  };
+  res.render('books', locals);
+});
 
-module.exports = bookRoutes
+module.exports = bookRoutes;

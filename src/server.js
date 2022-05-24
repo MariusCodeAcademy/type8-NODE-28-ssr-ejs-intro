@@ -1,4 +1,5 @@
 const express = require('express');
+
 const app = express();
 const path = require('path');
 const bookRoutes = require('./routes/bookRoutes');
@@ -15,16 +16,14 @@ app.set('views', 'src/views');
 const staticDir = path.join(__dirname, 'assets');
 app.use(express.static(staticDir));
 
-
 // Routes
-app.use('/', pageRoutes)
-app.use('/', bookRoutes)
+app.use('/', pageRoutes);
+app.use('/', bookRoutes);
 
 // GET /users - grazins users.ejs psl kuris atvaizduos useriu korteliu pavidalus
 // sukuri user.ejs
 // exportuoti importuoti users masyva
 // paduoti users masyva i user.ejs psl
-// user.ejs psl generuoti korteles is masyvo duomenu 
-
+// user.ejs psl generuoti korteles is masyvo duomenu
 
 app.listen(PORT, () => console.log('listening on port', PORT));
