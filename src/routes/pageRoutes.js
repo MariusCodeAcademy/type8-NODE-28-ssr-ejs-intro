@@ -1,26 +1,14 @@
 const express = require('express');
 
 const pageRoutes = express.Router();
+
+const controller = require('../controllers/pageController')
 // atkelti home, about, contact
 
-pageRoutes.get('/', (req, res) => {
-  // get info from db
-  const tech = ['Html', 'Css', 'Js'];
-  const data = {
-    tech,
-    title: 'Welcome',
-    currentPage: 'home',
-  };
-  res.render('index', data);
-});
 
-pageRoutes.get('/about', (req, res) => {
-  const data = {
-    title: 'About Us',
-    currentPage: 'about',
-  };
-  res.render('about', data);
-});
+pageRoutes.get('/', controller.showHomePage);
+
+pageRoutes.get('/about', controller.showAboutPage);
 
 pageRoutes.get('/contact', (req, res) => {
   const locals = {
