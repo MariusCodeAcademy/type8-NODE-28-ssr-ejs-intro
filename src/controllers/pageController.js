@@ -17,7 +17,17 @@ const showAboutPage = (req, res) => {
   res.render('about', data);
 }
 
+const showContactPage = (req, res) => {
+  const locals = {
+    title: 'Contact Us',
+    currentPage: 'contact',
+  };
+  // res.render('failo pavadinimas views directory be ejs', kintamuju objektas)
+  res.render('contact', locals);
+}
+
 module.exports = {
   showHomePage, 
-  showAboutPage
+  showAboutPage, 
+  showContactPage
 }
