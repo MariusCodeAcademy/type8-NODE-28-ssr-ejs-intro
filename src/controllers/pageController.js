@@ -7,7 +7,7 @@ const showHomePage = (req, res) => {
     currentPage: 'home',
   };
   res.render('index', data);
-}
+};
 
 const showAboutPage = (req, res) => {
   const data = {
@@ -15,7 +15,7 @@ const showAboutPage = (req, res) => {
     currentPage: 'about',
   };
   res.render('about', data);
-}
+};
 
 const showContactPage = (req, res) => {
   const locals = {
@@ -24,10 +24,10 @@ const showContactPage = (req, res) => {
   };
   // res.render('failo pavadinimas views directory be ejs', kintamuju objektas)
   res.render('contact', locals);
-}
+};
 
 module.exports = {
-  showHomePage, 
-  showAboutPage, 
-  showContactPage
-}
+  showHomePage,
+  showAboutPage,
+  showContactPage,
+};
